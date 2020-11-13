@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\130</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C15A890-4101-4B6D-9F95-2EA2FC483408}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLNhaSach</RootNamespace>
+    <AssemblyName>QLNhaSach</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0-preview5-19254-05\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0-preview5-19254-05\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.15\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=7.0.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.7.0.7-m61\lib\net451\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataHinhAnh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataHinhAnh.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DoiEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiEmail.Designer.cs">
+      <DependentUpon>DoiEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DonDatHangCuaKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonDatHangCuaKhach.Designer.cs">
+      <DependentUpon>DonDatHangCuaKhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DonDatHangKhach.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DonDatHangKhach.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DonGiaoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonGiaoHang.Designer.cs">
+      <DependentUpon>DonGiaoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien.Designer.cs">
+      <DependentUpon>GiaoDien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GioiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GioiThieu.Designer.cs">
+      <DependentUpon>GioiThieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LienHe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LienHe.Designer.cs">
+      <DependentUpon>LienHe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManHinhDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManHinhDangKy.Designer.cs">
+      <DependentUpon>ManHinhDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManHinhDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManHinhDangNhap.Designer.cs">
+      <DependentUpon>ManHinhDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLNSDataSet.cs">
+      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSDataSet4.cs">
+      <DependentUpon>QLNSDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinTaiKhoan.Designer.cs">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThuVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThuVien.Designer.cs">
+      <DependentUpon>ThuVien.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataHinhAnh.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DataHinhAnh.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiEmail.resx">
+      <DependentUpon>DoiEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DonDatHangCuaKhach.resx">
+      <DependentUpon>DonDatHangCuaKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DonGiaoHang.resx">
+      <DependentUpon>DonGiaoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien.resx">
+      <DependentUpon>GiaoDien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GioiThieu.resx">
+      <DependentUpon>GioiThieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LienHe.resx">
+      <DependentUpon>LienHe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManHinhDangKy.resx">
+      <DependentUpon>ManHinhDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManHinhDangNhap.resx">
+      <DependentUpon>ManHinhDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ThongTinTaiKhoan.resx">
+      <DependentUpon>ThongTinTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThuVien.resx">
+      <DependentUpon>ThuVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DonDatHangKhach.xsc">
+      <DependentUpon>DonDatHangKhach.xsd</DependentUpon>
+    </None>
+    <None Include="DonDatHangKhach.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DonDatHangKhach.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DonDatHangKhach.xss">
+      <DependentUpon>DonDatHangKhach.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\AdminPanel.datasource" />
+    <None Include="Properties\DataSources\DangNhap.datasource" />
+    <None Include="Properties\DataSources\DoiEmail.datasource" />
+    <None Include="Properties\DataSources\DoiMatKhau.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.DONDATHANGDataTable.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.DONDATHANGRow.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.DONDATHANGRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.DONDATHANGRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.LOAISACHDataTable.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.LOAISACHRow.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.LOAISACHRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.LOAISACHRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.NHAXUATBANDataTable.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.NHAXUATBANRow.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.NHAXUATBANRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.NHAXUATBANRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.SACHDataTable.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.SACHRow.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.SACHRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.SACHRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.USERINFODataTable.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.USERINFORow.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.USERINFORowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DonDatHangKhach.USERINFORowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DonGiaoHang.datasource" />
+    <None Include="Properties\DataSources\GiaoDien.datasource" />
+    <None Include="Properties\DataSources\ManHinhDangKy.datasource" />
+    <None Include="Properties\DataSources\ManHinhDangNhap.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.DonDatHangKhachTableAdapters.DONDATHANGTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.DonDatHangKhachTableAdapters.LOAISACHTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.DonDatHangKhachTableAdapters.NHAXUATBANTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.DonDatHangKhachTableAdapters.SACHTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.DonDatHangKhachTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.DonDatHangKhachTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.DonDatHangKhachTableAdapters.USERINFOTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet1TableAdapters.SACHTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet1TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet1TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet2TableAdapters.SACHTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet2TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet2TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet3TableAdapters.DONDATHANGTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet3TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet3TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet4TableAdapters.ADMININFOTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet4TableAdapters.DONDATHANGTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet4TableAdapters.LOAISACHTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet4TableAdapters.LOGININFOTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet4TableAdapters.NHAXUATBANTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet4TableAdapters.SACHTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet4TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet4TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSet4TableAdapters.USERINFOTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\QLNhaSach.QLNSDataSetTableAdapters.USERINFOTableAdapter.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet.USERINFODataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet.USERINFORow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet.USERINFORowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet.USERINFORowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet1.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet1.SACHDataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet1.SACHRow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet1.SACHRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet1.SACHRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet2.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet2.SACHDataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet2.SACHRow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet2.SACHRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet2.SACHRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet3.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet3.DONDATHANGDataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet3.DONDATHANGRow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet3.DONDATHANGRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet3.DONDATHANGRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.ADMININFODataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.ADMININFORow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.ADMININFORowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.ADMININFORowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.DONDATHANGDataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.DONDATHANGRow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.DONDATHANGRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.DONDATHANGRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.LOAISACHDataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.LOAISACHRow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.LOAISACHRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.LOAISACHRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.LOGININFODataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.LOGININFORow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.LOGININFORowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.LOGININFORowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.NHAXUATBANDataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.NHAXUATBANRow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.NHAXUATBANRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.NHAXUATBANRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.SACHDataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.SACHRow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.SACHRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.SACHRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.USERINFODataTable.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.USERINFORow.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.USERINFORowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\QLNSDataSet4.USERINFORowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\ThongTinTaiKhoan.datasource" />
+    <None Include="Properties\DataSources\ThuVien.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QLNSDataSet.xsc">
+      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNSDataSet.xss">
+      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet1.xsc">
+      <DependentUpon>QLNSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNSDataSet1.xss">
+      <DependentUpon>QLNSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet2.xsc">
+      <DependentUpon>QLNSDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNSDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNSDataSet2.xss">
+      <DependentUpon>QLNSDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet3.xsc">
+      <DependentUpon>QLNSDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNSDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNSDataSet3.xss">
+      <DependentUpon>QLNSDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet4.xsc">
+      <DependentUpon>QLNSDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNSDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNSDataSet4.xss">
+      <DependentUpon>QLNSDataSet4.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A001.jpg" />
+  </ItemGroup>
+  <ItemGroup Condition="$(VisualStudioVersion) == '15.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=13.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A002.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A003.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B002.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B003.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B004.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B005.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B006.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D002.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D003.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D004.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E002.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
